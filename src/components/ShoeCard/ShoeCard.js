@@ -36,6 +36,11 @@ const ShoeCard = ({
       <Wrapper>
         <ImageWrapper>
           <Image alt="" src={imageSrc} />
+          {variant !== 'default' && 
+            <TypeTag>
+              {variant}
+            </TypeTag>
+          }
         </ImageWrapper>
         <Spacer size={12} />
         <Row>
@@ -61,10 +66,29 @@ const ImageWrapper = styled.div`
   position: relative;
 `;
 
-const Image = styled.img``;
+const TypeTag = styled.div`
+  position: absolute;
+  width: fit-content;
+  height: 32px;
+  right: -4px;
+  top: 12px;
+  bottom: 88.11%;
+  background: #6868D9;
+  border-radius: 2px;
+  padding: 7px 9px 9px 11px;
+  display: flex;
+  align-items: center;
+  color: white;
+`
+
+const Image = styled.img`
+  width: 100%;
+`;
 
 const Row = styled.div`
   font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
 `;
 
 const Name = styled.h3`
